@@ -44,6 +44,7 @@ class _HomeState extends State<Home> {
               height: 200.0,
               margin: EdgeInsets.only(left: 4.0, top: 4.0, right: 4.0),
               child: Card(
+                  elevation: 6.0,
                   clipBehavior: Clip.hardEdge,
                   child: InkWell(
                       onTap: () => _navigateToDetails(_items[i]),
@@ -56,9 +57,11 @@ class _HomeState extends State<Home> {
                                     begin: Alignment.topCenter,
                                     end: Alignment.bottomCenter,
                                     colors: [
-                                  Colors.black.withAlpha(0),
-                                  Colors.black
-                                ])),
+                                      Colors.black.withAlpha(0),
+                                      Colors.black.withAlpha(0),
+                                      Colors.black45,
+                                      Colors.black87
+                                    ])),
                             child: Container(
                                 padding: EdgeInsets.only(
                                     left: 4.0, right: 4.0, bottom: 4.0),
