@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:le_monde_in_rss/models/rss_item_wrapper.dart';
 
-/// A home widget which extends to {StatelessWidget}.
-class Details extends StatelessWidget {
+/// A [StatelessWidget] subclass.
+class DetailsScreen extends StatelessWidget {
+
   // FIELDS --------------------------------------------------------------------
+
   final String title;
   final RssItemWrapper item;
 
   // CONSTRUCTOR ---------------------------------------------------------------
-  Details({Key key, this.title, this.item}) : super(key: key);
+
+  DetailsScreen({Key key, this.title, this.item}) : super(key: key);
 
   // METHODS -------------------------------------------------------------------
+
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(slivers: [
@@ -20,7 +24,6 @@ class Details extends StatelessWidget {
           expandedHeight: 200.0,
           flexibleSpace: FlexibleSpaceBar(
               title: Text(title),
-              // background: Image.network(item.urlImage, fit: BoxFit.cover),
               background: Stack(fit: StackFit.expand, children: [
                 Image.network(item.urlImage, fit: BoxFit.cover),
                 Container(
@@ -41,11 +44,11 @@ class Details extends StatelessWidget {
               padding: EdgeInsets.all(16.0),
               child: Column(children: [
                 Text(item.title, style: Theme.of(context).textTheme.headline5),
-                _getPadding(16.0),
+                SizedBox(height: 16.0),
                 Text(item.pubDate.toString(), style: Theme.of(context).textTheme.subtitle1),
-                _getPadding(16.0),
+                SizedBox(height: 16.0),
                 Text(item.description, style: Theme.of(context).textTheme.headline5),
-                _getPadding(16.0),
+                SizedBox(height: 16.0),
                 RichText(
                     text: TextSpan(
                         text: 'Link: ',
@@ -60,11 +63,5 @@ class Details extends StatelessWidget {
                         ]))
               ])))
     ]);
-  }
-
-  // -- UI --
-
-  Widget _getPadding(double size) {
-    return Container(padding: EdgeInsets.all(size));
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:le_monde_in_rss/widgets/home_widget.dart';
+import 'package:le_monde_in_rss/widgets/actuality_screen.dart';
 
-/// Root widget which extends to {StatelessWidget}.
-class RootApp extends StatelessWidget {
+/// A [StatelessWidget] subclass.
+class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,6 +11,6 @@ class RootApp extends StatelessWidget {
         theme: ThemeData(
             primarySwatch: Colors.blue,
             visualDensity: VisualDensity.adaptivePlatformDensity),
-        home: Home(title: 'Le Monde'));
+        home: ActualityScreen(title: 'Le Monde'));
   }
 }
